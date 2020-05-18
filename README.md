@@ -2,8 +2,8 @@
 
 A small application to give a user access to manager your cripto currencies
 
-- husky e commitlint
-- Stylelint ? Search
+# Setup
 
-* Create Account
-* Wallet Base
+`nvm use 10.0`
+
+`npm i`
