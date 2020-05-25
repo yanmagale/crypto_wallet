@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Wrapper } from './style';
 
@@ -18,11 +19,15 @@ const Currency = ({
         <p>{initials}</p>
         <p>{exchangeRate}</p>
         <div>
-          <ul>
-            <li>Comprar</li>
-            <li>Vender</li>
-            <li>Trocar</li>
-          </ul>
+          <Link to="/buy">
+            <button>Comprar {initials}</button>
+          </Link>
+          <Link to="/sell">
+            <button>Vender {initials}</button>
+          </Link>
+          <Link to="/change">
+            <button>Trocar {initials}</button>
+          </Link>
         </div>
       </Wrapper>
     </React.Fragment>

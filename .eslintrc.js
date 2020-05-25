@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['plugin:prettier/recommended', 'prettier/react'],
+  extends: ['plugin:prettier/recommended', 'prettier/react', "plugin:react/recommended"],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -24,5 +24,6 @@ module.exports = {
     'func-names': 'off',
     'no-process-exit': 'off',
     'object-shorthand': 'off',
+    'react/prop-types': 'off'
   },
 };
