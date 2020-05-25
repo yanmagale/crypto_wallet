@@ -7,18 +7,51 @@ import CurrencyManager from '../services/wallet/currencyManager.js';
 import BitcoinCurrency from '../services/wallet/currencies/bitcoin';
 import BritaCurrency from '../services/wallet/currencies/brita';
 
+import Wallet from './wallet';
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currencies: [],
+    };
+  }
   componentDidMount() {
+    // Setup
     const walletManager = new CurrencyManager();
-    const bitcoinWallet = new Currency('bitcoin', 'BTC', new BitcoinCurrency());
-    const britaWallet = new Currency('brita', 'BRI', new BritaCurrency());
+    const bitcoinWallet = new Currency({
+      name: 'bitcoin',
+      initials: 'BTC',
+      currencySymbol: 'B$',
+      exchange: new BitcoinCurrency(),
+    });
+    const britaWallet = new Currency({
+      name: 'brita',
+      initials: 'BRI',
+      currencySymbol: 'R$',
+      exchange: new BritaCurrency(),
+    });
+    const myCurrencies = [];
 
     walletManager.addCurrency(bitcoinWallet);
     walletManager.addCurrency(britaWallet);
+    const wallets = walletManager.getCurrencies();
 
-    const myWallet = walletManager.getCurrency('brita');
-    myWallet.getBalance();
-    console.log(myWallet.getName());
+    wallets.forEach((wallet, index) => {
+      myCurrencies.push({
+        name:
+          wallet.getName().charAt(0).toUpperCase() + wallet.getName().slice(1),
+        balance: wallet.getBalance(),
+        initials: wallet.getInitials(),
+        currencySymbol: wallet.getCurrencySymbol(),
+        exhangeRate: wallet.getExchangeRate(),
+        index: index,
+      });
+    });
+
+    this.setState({
+      currencies: [...myCurrencies],
+    });
   }
 
   render() {
@@ -27,14 +60,15 @@ class App extends Component {
       text-align: center;
       color: palevioletred;
     `;
+
+    const { currencies } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <Title>My Crypto Wallet</Title>
         </header>
         <div>
-          <div>Britas</div>
-          <div>Bitcoin</div>
+          <Wallet currencies={currencies} />
         </div>
       </div>
     );

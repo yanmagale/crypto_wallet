@@ -1,6 +1,10 @@
 class BritaCurrency {
   getBalance() {
-    console.log('Saldo em Brita  de 100');
+    return 100;
+  }
+
+  getExchangeRate() {
+    return 0.55;
   }
 }
 
