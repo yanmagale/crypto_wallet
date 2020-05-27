@@ -13,7 +13,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={SignUpPage} />
         <Route path="/wallet" component={WalletPage} />
-        <Route path="/buy" component={BuyCurrencyPage} />
+        <Route path="/buy/" component={BuyCurrencyPage} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

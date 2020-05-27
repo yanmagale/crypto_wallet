@@ -39,8 +39,7 @@ class WalletPage extends Component {
 
     wallets.forEach((wallet, index) => {
       myCurrencies.push({
-        name:
-          wallet.getName().charAt(0).toUpperCase() + wallet.getName().slice(1),
+        name: wallet.getName(),
         balance: wallet.getBalance(),
         initials: wallet.getInitials(),
         currencySymbol: wallet.getCurrencySymbol(),
