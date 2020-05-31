@@ -1,7 +1,10 @@
 import Dexie from 'dexie';
 
 const database = new Dexie('CryptoWallet');
-database.version(1).stores({ users: '++id', transactions: '++id' });
+database.version(1).stores({
+  users: '++id, name, email',
+  transactions: '++id, type, amount, currency',
+});
 
 database.open().catch(function (e) {
   console.error('Error at create database: ' + e);
