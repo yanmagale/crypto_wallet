@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import BuyCurrencyForm from '../../components/Buy/Form';
-import CurrencyInformation from '../../components/CurrencyInformation';
+import BuyCurrencyForm from 'components/Buy/Form';
+import CurrencyInformation from 'components/CurrencyInformation';
 
-import CurrencyManager from '../../services/wallet/currencyManager.js';
-import Currency from '../../services/wallet/currency.js';
-import BitcoinCurrency from '../../services/wallet/currencies/bitcoin';
-import BritaCurrency from '../../services/wallet/currencies/brita';
+import CurrencyManager from 'services/wallet/currencyManager.js';
+import Currency from 'services/wallet/currency.js';
+import BitcoinCurrency from 'services/wallet/currencies/bitcoin';
+import BritaCurrency from 'services/wallet/currencies/brita';
 
 // class BuyCurrencyPage extends Component {
 //   render() {

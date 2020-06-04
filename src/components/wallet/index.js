@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Currency from '../Currency';
+import Currency from 'components/Currency';
 
 import { Wrapper, CurrencyContainer } from './style';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import database from '../../../database/schema.js';
+import database from 'database/schema.js';
 
 class SignUpForm extends Component {
   constructor(props) {

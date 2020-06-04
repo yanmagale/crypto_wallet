@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import Currency from '../../services/wallet/currency.js';
-import CurrencyManager from '../../services/wallet/currencyManager.js';
+import Currency from 'services/wallet/currency.js';
+import CurrencyManager from 'services/wallet/currencyManager.js';
 
-import BitcoinCurrency from '../../services/wallet/currencies/bitcoin';
-import BritaCurrency from '../../services/wallet/currencies/brita';
+import BitcoinCurrency from 'services/wallet/currencies/bitcoin';
+import BritaCurrency from 'services/wallet/currencies/brita';
 
-import Wallet from '../../components/Wallet';
+import Wallet from 'components/Wallet';
 
 class WalletPage extends Component {
   constructor(props) {

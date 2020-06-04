@@ -1,4 +1,4 @@
-import database from '../../../../database/schema.js';
+import database from 'database/schema.js';
 
 class BitcoinCurrency {
   async getBalance() {

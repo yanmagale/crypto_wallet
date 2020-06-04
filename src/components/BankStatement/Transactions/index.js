@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import BankStatementService from '../../../services/bankStatement/';
+import BankStatementService from 'services/bankStatement/';
 
 class BankStatementTransactions extends Component {
   constructor(props) {

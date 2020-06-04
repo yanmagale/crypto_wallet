@@ -16,6 +16,18 @@
       {
         "pure": true
       }
+    ],
+    [
+      "babel-plugin-module-resolver",
+      {
+        "root": ["./src/"],
+        "alias": {
+          "components": "./src/components",
+          "database": "./src/database",
+          "pages": "./src/pages",
+          "services": "./src/services"
+        }
+      }
     ]
   ]
 }

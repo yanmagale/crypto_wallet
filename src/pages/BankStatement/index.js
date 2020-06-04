@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BankStatementTransactions from '../../components/BankStatement/Transactions';
+import BankStatementTransactions from 'components/BankStatement/Transactions';
 
 class BankStatementPage extends Component {
   render() {
