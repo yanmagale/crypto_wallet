@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-
-import database from 'database/schema.js';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -28,17 +25,12 @@ class SignUpForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { name, email } = this.state;
+    const { handleCreateUser } = this.props;
     const user = {
       name,
       email,
     };
-    database
-      .table('users')
-      .add(user)
-      .then((id) => {
-        this.props.history.push('/wallet');
-      })
-      .catch((err) => console.log(err));
+    handleCreateUser(user);
   }
 
   render() {
@@ -76,4 +68,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default withRouter(SignUpForm);
+export default SignUpForm;
