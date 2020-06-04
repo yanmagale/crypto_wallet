@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import BuyCurrencyForm from '../../components/buy/Form';
+import BuyCurrencyForm from '../../components/Buy/Form';
 import CurrencyInformation from '../../components/CurrencyInformation';
 
 import CurrencyManager from '../../services/wallet/currencyManager.js';

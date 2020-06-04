@@ -23,18 +23,18 @@ class BritaCurrency {
     );
 
     const dollarCurrency = await response.json();
+    let buy = null;
+    let sell = null;
 
     if (dollarCurrency.value && dollarCurrency.value.length) {
-      return {
-        buy: dollarCurrency.value[0].cotacaoCompra,
-        sell: dollarCurrency.value[0].cotacaoVenda,
-      };
-    } else {
-      return {
-        buy: null,
-        sell: null,
-      };
+      buy = dollarCurrency.value[0].cotacaoCompra;
+      sell = dollarCurrency.value[0].cotacaoVenda;
     }
+
+    return {
+      buy,
+      sell,
+    };
   }
 }
 

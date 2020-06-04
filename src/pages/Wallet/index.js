@@ -7,7 +7,7 @@ import CurrencyManager from '../../services/wallet/currencyManager.js';
 import BitcoinCurrency from '../../services/wallet/currencies/bitcoin';
 import BritaCurrency from '../../services/wallet/currencies/brita';
 
-import Wallet from '../../components/wallet';
+import Wallet from '../../components/Wallet';
 
 class WalletPage extends Component {
   constructor(props) {
