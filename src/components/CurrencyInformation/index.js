@@ -8,7 +8,6 @@ class CurrencyInformation extends Component {
         <p>{currency.getName()}</p>
         <p>{currency.getInitials()}</p>
         <p>{currency.getCurrencySymbol()}</p>
-        <p>{currency.getExchangeRate()}</p>
       </div>
     );
   }

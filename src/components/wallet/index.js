@@ -9,18 +9,33 @@ class Wallet extends Component {
     super();
     this.state = {
       balances: [],
-      updated: false,
+      rates: [],
+      updatedBalances: false,
+      updatedRate: false,
     };
   }
 
   componentDidUpdate(prevProps) {
     const { currencies } = this.props;
-    if (currencies.length && !this.state.updated) {
+    if (
+      currencies.length &&
+      !this.state.updatedBalances &&
+      !this.state.updatedRate
+    ) {
       const promises = currencies.map((currency) => currency.balance);
+      const ratesPromises = currencies.map((currency) => currency.exhangeRate);
+
       Promise.all(promises).then((results) => {
         this.setState({
           balances: [...this.state.balances, ...results],
-          updated: true,
+          updatedBalances: true,
+        });
+      });
+
+      Promise.all(ratesPromises).then((results) => {
+        this.setState({
+          rates: [...this.state.rates, ...results],
+          updatedRate: true,
         });
       });
     }
@@ -28,6 +43,8 @@ class Wallet extends Component {
   render() {
     const { currencies } = this.props;
     const { balances } = this.state;
+    const { rates } = this.state;
+
     return (
       <Wrapper>
         {balances.length &&
@@ -38,7 +55,7 @@ class Wallet extends Component {
                 balance={balances[index]}
                 initials={currency.initials}
                 currencySymbol={currency.currencySymbol}
-                exchangeRate={currency.exhangeRate}
+                exchangeRate={rates[index] ? rates[index].buy : ''}
               />
             </CurrencyContainer>
           ))}

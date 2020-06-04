@@ -14,8 +14,16 @@ class BitcoinCurrency {
     }, 0);
   }
 
-  getExchangeRate() {
-    return 0.1;
+  async getExchangeRate() {
+    let response = await fetch(
+      'https://www.mercadobitcoin.net/api/BTC/ticker/'
+    );
+    const rate = await response.json();
+    const { buy, sell } = rate.ticker;
+    return {
+      buy,
+      sell,
+    };
   }
 }
 

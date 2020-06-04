@@ -14,8 +14,27 @@ class BritaCurrency {
     }, 0);
   }
 
-  getExchangeRate() {
-    return 0.55;
+  async getExchangeRate() {
+    const currentDay = new Date();
+    let response = await fetch(
+      `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='${
+        currentDay.getMonth() + 1
+      }-${currentDay.getDate()}-${currentDay.getFullYear()}'`
+    );
+
+    const dollarCurrency = await response.json();
+
+    if (dollarCurrency.value && dollarCurrency.value.length) {
+      return {
+        buy: dollarCurrency.value[0].cotacaoCompra,
+        sell: dollarCurrency.value[0].cotacaoVenda,
+      };
+    } else {
+      return {
+        buy: null,
+        sell: null,
+      };
+    }
   }
 }
 

@@ -25,9 +25,6 @@ const Currency = ({
           <Link to="/sell">
             <button>Vender {initials}</button>
           </Link>
-          <Link to="/change">
-            <button>Trocar {initials}</button>
-          </Link>
         </div>
       </Wrapper>
     </React.Fragment>
