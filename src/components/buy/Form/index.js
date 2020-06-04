@@ -29,10 +29,12 @@ class BuyCurrencyForm extends Component {
     //Store, update base
     const { amount } = this.state;
     const { currency } = this.props;
+    const date = new Date().getTime();
     const transaction = {
       type: 'purchase',
       currency: currency.getName(),
       amount,
+      date,
     };
 
     database
