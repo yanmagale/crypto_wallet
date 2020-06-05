@@ -104,6 +104,6 @@ dist
 .tern-port
 
 # Editors and Local System Files
-.vscode
+.vscode/
 
 todos.md

@@ -7,13 +7,14 @@ class CurrencyHelper {
   constructor() {
     if (!CurrencyHelper.instance) {
       CurrencyHelper.instance = this;
+      CurrencyHelper.walletManager = null;
     }
 
     return CurrencyHelper.instance;
   }
 
   getCurrencies() {
-    const walletManager = new CurrencyManager();
+    CurrencyHelper.walletManager = new CurrencyManager();
     const bitcoinWallet = new Currency({
       name: 'bitcoin',
       initials: 'BTC',
@@ -28,9 +29,9 @@ class CurrencyHelper {
     });
     const myCurrencies = [];
 
-    walletManager.addCurrency(bitcoinWallet);
-    walletManager.addCurrency(britaWallet);
-    const wallets = walletManager.getCurrencies();
+    CurrencyHelper.walletManager.addCurrency(bitcoinWallet);
+    CurrencyHelper.walletManager.addCurrency(britaWallet);
+    const wallets = CurrencyHelper.walletManager.getCurrencies();
 
     wallets.forEach((wallet, index) => {
       myCurrencies.push({
@@ -44,6 +45,13 @@ class CurrencyHelper {
     });
 
     return myCurrencies;
+  }
+
+  getCurrency(currency) {
+    if (!CurrencyHelper.walletManager) {
+      this.getCurrencies();
+    }
+    return CurrencyHelper.walletManager.getCurrency(currency);
   }
 }
 

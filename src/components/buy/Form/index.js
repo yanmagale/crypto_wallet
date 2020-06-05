@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import database from 'database/schema.js';
-
 class BuyCurrencyForm extends Component {
   constructor(props) {
     super(props);
@@ -24,9 +22,7 @@ class BuyCurrencyForm extends Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    //Store, update base
+  shapeTransaction() {
     const { amount } = this.state;
     const { currency } = this.props;
     const date = new Date().getTime();
@@ -37,13 +33,13 @@ class BuyCurrencyForm extends Component {
       date,
     };
 
-    database
-      .table('transactions')
-      .add(transaction)
-      .then((id) => {
-        this.props.history.push('/wallet');
-      })
-      .catch((err) => console.log(err));
+    return transaction;
+  }
+
+  handleSubmit(event) {
+    const { handleCreateTransaction } = this.props;
+    event.preventDefault();
+    handleCreateTransaction(this.shapeTransaction());
   }
 
   render() {
