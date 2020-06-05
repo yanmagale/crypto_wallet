@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
-import Currency from 'services/wallet/currency.js';
-import CurrencyManager from 'services/wallet/currencyManager.js';
-
-import BitcoinCurrency from 'services/wallet/currencies/bitcoin';
-import BritaCurrency from 'services/wallet/currencies/brita';
+import { withRouter } from 'react-router-dom';
+import UsersService from 'services/users/';
+import CurrencyBuilder from 'services/wallet/currencyHelper/';
 
 import Wallet from 'components/Wallet';
 
@@ -17,36 +14,16 @@ class WalletPage extends Component {
     };
   }
   componentDidMount() {
-    // Setup
-    const walletManager = new CurrencyManager();
-    const bitcoinWallet = new Currency({
-      name: 'bitcoin',
-      initials: 'BTC',
-      currencySymbol: 'B$',
-      exchange: new BitcoinCurrency(),
-    });
-    const britaWallet = new Currency({
-      name: 'brita',
-      initials: 'BRI',
-      currencySymbol: 'R$',
-      exchange: new BritaCurrency(),
-    });
-    const myCurrencies = [];
+    UsersService.hasCreatedUsers()
+      .then((hasUsers) => {
+        return !hasUsers ? this.props.history.push('/') : '';
+      })
+      .then(this.getWalletCurrencies())
+      .catch((err) => console.log(err));
+  }
 
-    walletManager.addCurrency(bitcoinWallet);
-    walletManager.addCurrency(britaWallet);
-    const wallets = walletManager.getCurrencies();
-
-    wallets.forEach((wallet, index) => {
-      myCurrencies.push({
-        name: wallet.getName(),
-        balance: wallet.getBalance(),
-        initials: wallet.getInitials(),
-        currencySymbol: wallet.getCurrencySymbol(),
-        exhangeRate: wallet.getExchangeRate(),
-        index: index,
-      });
-    });
+  getWalletCurrencies() {
+    const myCurrencies = CurrencyBuilder.getCurrencies();
 
     this.setState({
       currencies: [...myCurrencies],
@@ -74,4 +51,4 @@ class WalletPage extends Component {
   }
 }
 
-export default WalletPage;
+export default withRouter(WalletPage);
