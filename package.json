@@ -55,5 +55,9 @@
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.0"
+  },
+  "engines": {
+    "node": "<=10.0.0",
+    "npm": ">=5.6.0"
   }
 }
