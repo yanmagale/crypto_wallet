@@ -24,7 +24,7 @@ class CurrencyHelper {
     const britaWallet = new Currency({
       name: 'brita',
       initials: 'BRI',
-      currencySymbol: 'R$',
+      currencySymbol: '$',
       exchange: new BritaCurrency(),
     });
     const myCurrencies = [];

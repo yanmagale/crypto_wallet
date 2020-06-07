@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setCurrencies } from 'reduxFolder/actions';
+
 import UsersService from 'services/users/';
 import CurrencyBuilder from 'services/wallet/currencyHelper/';
 
@@ -9,9 +12,6 @@ import { Wrapper, Title, WalletInformation, BankStatement } from './style';
 class WalletPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currencies: [],
-    };
   }
   componentDidMount() {
     UsersService.hasCreatedUsers()
@@ -23,15 +23,12 @@ class WalletPage extends Component {
   }
 
   getWalletCurrencies() {
-    const myCurrencies = CurrencyBuilder.getCurrencies();
-
-    this.setState({
-      currencies: [...myCurrencies],
-    });
+    const { setCurrencies } = this.props;
+    setCurrencies(CurrencyBuilder.getCurrencies());
   }
 
   render() {
-    const { currencies } = this.state;
+    const { currencies } = this.props;
     return (
       <Wrapper>
         <header>
@@ -53,4 +50,21 @@ class WalletPage extends Component {
   }
 }
 
-export default withRouter(WalletPage);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrencies: (currencies) => {
+      dispatch(setCurrencies(currencies));
+    },
+  };
+};
+
+const mapStateToProps = (state) => ({
+  currencies: state.currenciesReducer.currencies,
+});
+
+const WalletPageComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WalletPage);
+
+export default withRouter(WalletPageComponent);
