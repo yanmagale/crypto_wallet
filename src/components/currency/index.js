@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Wrapper } from './style';
+import { Wrapper, Button, Price } from './style';
 
 const Currency = ({
   name,
@@ -13,17 +13,24 @@ const Currency = ({
   return (
     <React.Fragment>
       <Wrapper>
-        <p>{name}</p>
-        <p>{balance}</p>
-        <p>{currencySymbol}</p>
-        <p>{initials}</p>
-        <p>{exchangeRate}</p>
+        <p>
+          {initials} - {name}
+        </p>
+        <p>
+          Saldo:
+          <Price>
+            {currencySymbol} {balance}
+          </Price>
+        </p>
+        <p>
+          Valor de compra: <Price> R$ {exchangeRate}</Price>
+        </p>
         <div className="currency__actions">
           <Link to={`/buy?currency=${name}`}>
-            <button>Comprar {initials}</button>
+            <Button>Comprar {initials}</Button>
           </Link>
           <Link to="/sell">
-            <button>Vender {initials}</button>
+            <Button>Vender {initials}</Button>
           </Link>
         </div>
       </Wrapper>

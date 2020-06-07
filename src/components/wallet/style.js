@@ -6,9 +6,15 @@ export const Wrapper = styled.section`
   grid-gap: 20px;
   padding-top: 10px;
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (min-width: 320px) {
+    grid-template-columns: 130px 130px;
+    grid-gap: 30px;
+    height: 50vh;
+  }
+
+  @media only screen and (min-width: 360px) {
     grid-template-columns: 150px 150px;
-    grid-gap: 20px;
+    grid-gap: 30px;
     height: 50vh;
   }
 `;

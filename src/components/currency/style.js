@@ -25,7 +25,21 @@ export const Wrapper = styled.section`
   }
 
   .currency__actions a {
-    width: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: #14aa4b;
+    height: 60px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .currency__actions a:hover {
+    width: 100%;
+    color: #ffffff;
+    background: #17c757;
   }
 
   .currency__actions a:first-child {
@@ -36,8 +50,24 @@ export const Wrapper = styled.section`
     .currency__actions {
       flex-direction: column;
     }
+    .currency__actions a {
+      background: #14aa4b;
+      height: 40px;
+      font-size: 16px;
+    }
     .currency__actions a:first-child {
+      margin-right: 0;
       margin-bottom: 10px;
     }
   }
+`;
+
+export const Button = styled.div`
+  display: flex;
+`;
+
+export const Price = styled.span`
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 3px;
 `;
