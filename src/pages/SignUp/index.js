@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import UsersService from 'services/users/';
 import SignUpForm from 'components/SignUp/Form';
 
+import { Wrapper } from './style';
+
 class SignUpPage extends Component {
   constructor() {
     super();
@@ -28,8 +30,13 @@ class SignUpPage extends Component {
   render() {
     return (
       <div>
-        <h2>Sign Up Page</h2>
-        <SignUpForm handleCreateUser={this.createUser} />
+        <h2>Crypto Wallet</h2>
+        <div>
+          <p>Algum texto aqui falando sobre a aplicação</p>
+        </div>
+        <Wrapper>
+          <SignUpForm handleCreateUser={this.createUser} />
+        </Wrapper>
       </div>
     );
   }

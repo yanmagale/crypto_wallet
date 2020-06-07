@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import UsersService from 'services/users/';
 import CurrencyBuilder from 'services/wallet/currencyHelper/';
 
 import Wallet from 'components/Wallet';
+import { Wrapper, Title, WalletInformation, BankStatement } from './style';
 
 class WalletPage extends Component {
   constructor(props) {
@@ -31,22 +31,24 @@ class WalletPage extends Component {
   }
 
   render() {
-    const Title = styled.h1`
-      font-size: 1.5em;
-      text-align: center;
-      color: palevioletred;
-    `;
-
     const { currencies } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
+      <Wrapper>
+        <header>
           <Title>My Crypto Wallet</Title>
         </header>
-        <div>
-          <Wallet currencies={currencies} />
-        </div>
-      </div>
+        <WalletInformation>
+          Veja abaixo informações sobre as moedas da sua carteira!
+        </WalletInformation>
+        <Wallet currencies={currencies} />
+        <BankStatement>
+          <div>Seu Saldo em Conta: R$ 100.000,00</div>
+          <div>
+            Para acessar o seu extrato,{' '}
+            <Link to={`/bank-statement`}>clique aqui</Link>
+          </div>
+        </BankStatement>
+      </Wrapper>
     );
   }
 }

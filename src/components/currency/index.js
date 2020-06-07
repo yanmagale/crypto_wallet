@@ -18,7 +18,7 @@ const Currency = ({
         <p>{currencySymbol}</p>
         <p>{initials}</p>
         <p>{exchangeRate}</p>
-        <div>
+        <div className="currency__actions">
           <Link to={`/buy?currency=${name}`}>
             <button>Comprar {initials}</button>
           </Link>

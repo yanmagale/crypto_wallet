@@ -6,9 +6,9 @@ export const Wrapper = styled.section`
   width: 100%;
   height: 100%;
   flex-direction: column;
-  background: #14aa4b;
-  color: #fff;
-  border: none;
+  border: 1px solid;
+  border-color: #14aa4b;
+
   font-size: 16px;
   border-radius: 5px;
   padding: 5px;
@@ -16,5 +16,28 @@ export const Wrapper = styled.section`
     font-size: 14px;
     margin: 0;
     text-align: center;
+  }
+
+  .currency__actions {
+    display: flex;
+    align-items: center;
+    widows: 100%;
+  }
+
+  .currency__actions a {
+    width: 40%;
+  }
+
+  .currency__actions a:first-child {
+    margin-right: 10px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .currency__actions {
+      flex-direction: column;
+    }
+    .currency__actions a:first-child {
+      margin-bottom: 10px;
+    }
   }
 `;
