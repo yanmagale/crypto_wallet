@@ -35,7 +35,7 @@ class WalletPage extends Component {
     return (
       <Wrapper>
         <header>
-          <Title>My Crypto Wallet</Title>
+          <Title>Minha Carteira de Cryptomoedas</Title>
         </header>
         <WalletInformation>
           Veja abaixo informações sobre as moedas da sua carteira!

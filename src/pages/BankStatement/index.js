@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BankStatementTransactions from 'components/BankStatement/Transactions';
 import BankStatementService from 'services/bankStatement/';
+import { Title, NavigationContainer, TransactionsContainer } from './style';
 
 class BankStatementPage extends Component {
   constructor(props) {
@@ -24,13 +25,16 @@ class BankStatementPage extends Component {
     const { transactions } = this.state;
     return (
       <div>
-        <h2>Bank Statement Page</h2>
+        <Title>Extrato de Transações</Title>
         {transactions.length && (
-          <BankStatementTransactions transactions={transactions} />
+          <TransactionsContainer>
+            <BankStatementTransactions transactions={transactions} />
+          </TransactionsContainer>
         )}
-        <Link to={`/wallet`}>
-          <button>Acessar minha carteira</button>
-        </Link>
+        <NavigationContainer>
+          Para acessar sua carteira,
+          <Link to={`/wallet`}>clique aqui</Link>
+        </NavigationContainer>
       </div>
     );
   }

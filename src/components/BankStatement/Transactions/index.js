@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Wrapper } from './style';
 
-class BankStatementTransactions extends Component {
-  render() {
-    const { transactions } = this.props;
-    return (
-      <React.Fragment>
-        {transactions.map((transaction, index) => (
-          <div key={index}>
-            <p>{transaction.type}</p>
-            <p>{transaction.currency}</p>
-            <p>{transaction.amount}</p>
-            <p>{transaction.date}</p>
-          </div>
-        ))}
-      </React.Fragment>
-    );
-  }
-}
+const BankStatementTransactions = ({ transactions }) => {
+  return (
+    <React.Fragment>
+      {transactions.map((transaction, index) => (
+        <Wrapper key={index}>
+          <p>{transaction.type}</p>
+          <p>{transaction.currency}</p>
+          <p>{transaction.amount}</p>
+          <p>
+            {new Date(transaction.date)
+              .toJSON()
+              .slice(0, 10)
+              .replace(/-/g, '/')}
+          </p>
+        </Wrapper>
+      ))}
+    </React.Fragment>
+  );
+};
 
 export default BankStatementTransactions;
