@@ -16,10 +16,11 @@ class BitcoinCurrency {
 
   async getExchangeRate() {
     let response = await fetch(
-      'https://www.mercadobitcoin.net/api/BTC/ticker/'
+      'https://www.mercadobitcoin.net/api/BTC/ticker/',
+      { mode: 'cors' }
     );
     const rate = await response.json();
-    const { buy, sell } = rate.ticker;
+    const { buy = null, sell = null } = rate.ticker;
     return {
       buy,
       sell,

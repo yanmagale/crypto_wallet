@@ -19,12 +19,13 @@ class BritaCurrency {
     let response = await fetch(
       `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='${
         currentDay.getMonth() + 1
-      }-${currentDay.getDate()}-${currentDay.getFullYear()}'`
+      }-${currentDay.getDate()}-${currentDay.getFullYear()}'`,
+      { mode: 'cors' }
     );
 
     const dollarCurrency = await response.json();
-    let buy = null;
-    let sell = null;
+    let buy = 5.1;
+    let sell = 4.0;
 
     if (dollarCurrency.value && dollarCurrency.value.length) {
       buy = dollarCurrency.value[0].cotacaoCompra;
