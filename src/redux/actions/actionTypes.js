@@ -1,2 +1,4 @@
 export const SET_CURRENCIES = 'SET_CURRENCIES';
 export const SET_TRANSACTIONS = 'SET_TRANSACTIONS';
+export const SET_BALANCES = 'SET_BALANCES';
+export const SET_RATES = 'SET_RATES';

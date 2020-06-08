@@ -1,49 +1,33 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setBalances, setRates } from 'reduxFolder/actions';
 
 import Currency from 'components/Currency';
 
 import { Wrapper, CurrencyContainer } from './style';
 
 class Wallet extends Component {
-  constructor() {
-    super();
-    this.state = {
-      balances: [],
-      rates: [],
-      updatedBalances: false,
-      updatedRate: false,
-    };
-  }
-
-  componentDidUpdate(prevProps) {
-    const { currencies } = this.props;
+  componentDidUpdate() {
+    const { currencies, setBalances, setRates } = this.props;
     if (
       currencies.length &&
-      !this.state.updatedBalances &&
-      !this.state.updatedRate
+      this.props.balances.length == 0 &&
+      this.props.rates.length == 0
     ) {
       const promises = currencies.map((currency) => currency.balance);
       const ratesPromises = currencies.map((currency) => currency.exhangeRate);
 
       Promise.all(promises).then((results) => {
-        this.setState({
-          balances: [...this.state.balances, ...results],
-          updatedBalances: true,
-        });
+        setBalances(results);
       });
 
       Promise.all(ratesPromises).then((results) => {
-        this.setState({
-          rates: [...this.state.rates, ...results],
-          updatedRate: true,
-        });
+        setRates(results);
       });
     }
   }
   render() {
-    const { currencies } = this.props;
-    const { balances } = this.state;
-    const { rates } = this.state;
+    const { currencies, balances, rates } = this.props;
 
     return (
       <Wrapper>
@@ -64,4 +48,22 @@ class Wallet extends Component {
   }
 }
 
-export default Wallet;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setBalances: (balances) => {
+      dispatch(setBalances(balances));
+    },
+    setRates: (rates) => {
+      dispatch(setRates(rates));
+    },
+  };
+};
+
+const mapStateToProps = (state) => ({
+  balances: state.walletReducer.balances,
+  rates: state.walletReducer.rates,
+});
+
+const WalletComponent = connect(mapStateToProps, mapDispatchToProps)(Wallet);
+
+export default WalletComponent;
