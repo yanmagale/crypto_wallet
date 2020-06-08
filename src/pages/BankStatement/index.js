@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setTransactions } from 'reduxFolder/actions';
+
 import BankStatementTransactions from 'components/BankStatement/Transactions';
 import BankStatementService from 'services/bankStatement/';
 import { Title, NavigationContainer, TransactionsContainer } from './style';
@@ -7,22 +10,18 @@ import { Title, NavigationContainer, TransactionsContainer } from './style';
 class BankStatementPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      transactions: [],
-    };
   }
 
   componentDidMount() {
     BankStatementService.getEntries()
       .then((response) => {
-        this.setState({
-          transactions: [...this.state.transactions, ...response],
-        });
+        const { setTransactions } = this.props;
+        setTransactions(response);
       })
       .catch((error) => console.error(error));
   }
   render() {
-    const { transactions } = this.state;
+    const { transactions } = this.props;
     return (
       <div>
         <Title>Extrato de Transações</Title>
@@ -39,4 +38,22 @@ class BankStatementPage extends Component {
     );
   }
 }
-export default BankStatementPage;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setTransactions: (currencies) => {
+      dispatch(setTransactions(currencies));
+    },
+  };
+};
+
+const mapStateToProps = (state) => ({
+  transactions: state.bankStatementReducer.transactions,
+});
+
+const BankStatementComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BankStatementPage);
+
+export default BankStatementComponent;
