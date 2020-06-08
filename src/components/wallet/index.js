@@ -7,22 +7,36 @@ import Currency from 'components/Currency';
 import { Wrapper, CurrencyContainer } from './style';
 
 class Wallet extends Component {
+  constructor() {
+    super();
+    this.state = {
+      updatedBalances: false,
+      updatedRate: false,
+    };
+  }
+
   componentDidUpdate() {
     const { currencies, setBalances, setRates } = this.props;
     if (
       currencies.length &&
-      this.props.balances.length == 0 &&
-      this.props.rates.length == 0
+      !this.state.updatedBalances &&
+      !this.state.updatedRate
     ) {
       const promises = currencies.map((currency) => currency.balance);
       const ratesPromises = currencies.map((currency) => currency.exhangeRate);
 
       Promise.all(promises).then((results) => {
         setBalances(results);
+        this.setState({
+          updatedBalances: true,
+        });
       });
 
       Promise.all(ratesPromises).then((results) => {
         setRates(results);
+        this.setState({
+          updatedRate: true,
+        });
       });
     }
   }
