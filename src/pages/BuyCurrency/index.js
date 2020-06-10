@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 
-import BuyCurrencyForm from 'components/Buy/Form';
-import CurrencyInformation from 'components/CurrencyInformation';
+import BuyCurrencyForm from 'components/Buy/Form/';
+import CurrencyInformation from 'components/CurrencyInformation/';
 import CurrencyBuilder from 'services/wallet/currencyHelper/';
 import TransactionService from 'services/transaction/';
 
