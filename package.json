@@ -1,7 +1,7 @@
 {
   "name": "crypto_wallet",
   "version": "1.0.0",
-  "description": "",
+  "description": "A small wallet application to control your crypto currencies",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -11,7 +11,7 @@
     "lint:css": "stylelint './src/**/*.js'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yan Magalhães",
   "license": "MIT",
   "husky": {
     "hooks": {
@@ -66,5 +66,8 @@
   "engines": {
     "node": ">=6",
     "npm": ">=5"
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
   }
 }
