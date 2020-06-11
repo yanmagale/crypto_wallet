@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setBalances, setRates } from 'reduxFolder/actions';
 
-import Currency from 'components/Currency/';
+import Currency from 'components/currency/';
 
 import { Wrapper, CurrencyContainer } from './style';
 

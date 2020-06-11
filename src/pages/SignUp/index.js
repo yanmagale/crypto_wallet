@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import UsersService from 'services/users/';
-import SignUpForm from 'components/SignUp/Form';
+import SignUpForm from 'components/signUp/form';
 
 import { Wrapper } from './style';
 

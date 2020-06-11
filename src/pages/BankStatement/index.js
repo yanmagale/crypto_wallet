@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setTransactions } from 'reduxFolder/actions';
 
-import BankStatementTransactions from 'components/BankStatement/Transactions';
+import BankStatementTransactions from 'components/bankStatement/transactions';
 import BankStatementService from 'services/bankStatement/';
 import { Title, NavigationContainer, TransactionsContainer } from './style';
 
