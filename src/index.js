@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import WalletPage from './pages/wallet/';
-import SignUpPage from './pages/signUp/';
-import BankStatementPage from './pages/bankStatement/';
-import BuyCurrencyPage from './pages/buyCurrency/';
-import { Store } from './redux/store';
+import WalletPage from 'pages/wallet/';
+import SignUpPage from 'pages/signUp/';
+import BankStatementPage from 'pages/bankStatement/';
+import BuyCurrencyPage from 'pages/buyCurrency/';
+import { Store } from 'reduxFolder/store';
 
 import * as serviceWorker from './serviceWorker';
 
