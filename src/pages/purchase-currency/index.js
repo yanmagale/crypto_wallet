@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 
-// import BuyCurrencyForm from 'components/buy/form/';
+import PurchaseForm from 'components/purchase/form/';
 import CurrencyInformation from 'components/currency-information/';
 import CurrencyBuilder from 'services/wallet/currencyHelper';
 import TransactionService from 'services/transaction/';
@@ -28,10 +28,10 @@ const PurchaseCurrencyPage = () => {
     <div>
       <h3>ID: {query.get('currency')}</h3>
       <CurrencyInformation currency={currency} />
-      {/* <BuyCurrencyForm
+      <PurchaseForm
         currency={currency}
         handleCreateTransaction={createTransaction}
-      /> */}
+      />
     </div>
   );
 };

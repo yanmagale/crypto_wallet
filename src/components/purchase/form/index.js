@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-class BuyCurrencyForm extends Component {
+class PurchaseForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,4 +64,4 @@ class BuyCurrencyForm extends Component {
   }
 }
 
-export default withRouter(BuyCurrencyForm);
+export default withRouter(PurchaseForm);
