@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: 50vh;
   width: 80%;
   display: flex;
   align-items: center;
@@ -11,6 +10,10 @@ export const Wrapper = styled.div`
   text-align: center;
   margin: 30px auto;
   flex-direction: column;
+
+  .form__title {
+    color: #2d3844;
+  }
 `;
 
 export const Title = styled.h1`

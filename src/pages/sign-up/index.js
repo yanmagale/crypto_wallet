@@ -38,7 +38,7 @@ class SignUpPage extends Component {
           </ApplicationContent>
         </div>
         <Wrapper>
-          <h2>Preencha os campos abaixo</h2>
+          <h2 className="form__title">Preencha os campos abaixo</h2>
           <SignUpForm handleCreateUser={this.createUser} />
         </Wrapper>
       </Container>

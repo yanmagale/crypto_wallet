@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { FormElement, Button } from './style';
+
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +39,7 @@ class SignUpForm extends Component {
     return (
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <FormElement>
             <label htmlFor="nameImput">Nome</label>
             <input
               type="text"
@@ -48,8 +50,8 @@ class SignUpForm extends Component {
               id="nameImput"
               placeholder="Nome Completo"
             />
-          </div>
-          <div>
+          </FormElement>
+          <FormElement>
             <label htmlFor="emailImput">E-Mail</label>
             <input
               type="email"
@@ -60,8 +62,8 @@ class SignUpForm extends Component {
               id="emailImput"
               placeholder="E-mail"
             />
-          </div>
-          <button>Criar conta</button>
+          </FormElement>
+          <Button>Criar conta</Button>
         </form>
       </React.Fragment>
     );
