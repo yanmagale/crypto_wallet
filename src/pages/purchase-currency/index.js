@@ -6,7 +6,7 @@ import CurrencyInformation from 'components/currency-information/';
 import CurrencyBuilder from 'services/wallet/currencyHelper';
 import TransactionService from 'services/transaction/';
 
-const BuyCurrencyPage = () => {
+const PurchaseCurrencyPage = () => {
   function createTransaction(transaction) {
     TransactionService.create(transaction)
       .then(() => {
@@ -36,4 +36,4 @@ const BuyCurrencyPage = () => {
   );
 };
 
-export default BuyCurrencyPage;
+export default PurchaseCurrencyPage;

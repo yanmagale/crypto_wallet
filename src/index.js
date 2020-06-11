@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignUpPage from 'pages/sign-up/';
 import ExchangePageComponent from 'pages/exchange/';
 import AccountStatementPageComponent from 'pages/account-statement/';
-import BuyCurrencyPage from 'pages/buy-currency/';
+import PurchaseCurrencyPage from 'pages/purchase-currency/';
 import { Store } from 'redux-folder/store';
 
 import './styles/index.css';
@@ -23,7 +23,7 @@ ReactDOM.render(
             path="/account-statement/"
             component={AccountStatementPageComponent}
           />
-          <Route path="/buy/" component={BuyCurrencyPage} />
+          <Route path="/purchase/" component={PurchaseCurrencyPage} />
         </Switch>
       </BrowserRouter>
     </Provider>
