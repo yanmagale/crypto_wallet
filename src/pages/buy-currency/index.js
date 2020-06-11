@@ -10,7 +10,7 @@ const BuyCurrencyPage = () => {
   function createTransaction(transaction) {
     TransactionService.create(transaction)
       .then(() => {
-        history.push('/wallet');
+        history.push('/exchange');
       })
       .catch((err) => console.log(err));
   }
