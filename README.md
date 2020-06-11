@@ -1,36 +1,40 @@
 Crypto Wallet
 
-> A small application to give a user access to manager your cripto currencies.
+> A small application to give a access for a user in order to control your cripto currencies.
 
 # Setup
 
-- Acess folder and Run `yarn install`
-- After install depedencies, run `yarn start`
+- After clone this repo, run `nvm install 10`
+- After that, run `npm install` to install dependencies
+- Finnaly run `npm start` and the application will open at the your browser
 
 # Tests
 
-- Run `yarn test`
+- Run `npm run test`
 
-# Demo
+# Generate a Build
 
-- Access [this url](https://breaking-bad-characters.netlify.com/)
+- Run `npm run build`
 
 # Stack
 
 - React
 - Redux
-- Jest
-- Eslint/Prettier
+- Jest and Enzyme
+- Eslint/Prettier/Stylelint
+- Styled Components
+- For commits - we are using commitlint pattern. [Check it out](https://commitlint.js.org/#/)
 - For CI - Netlify
 
 # Next steps
 
-- Create more tests
-- Create more actions and states at redux (http conexions by example)
+- Create more actions and states at redux (http connexions by example)
 - Render fallback messages case dont exists data
-- Improve redux usage, isolating `fetch` request
-- Isolate logic to identify `life` status
+- Improve UI actions at form components
+- Create a better UI screens
+- Create Change Currencies feature
+- Create more tests
 
-# Contact
+# Questions
 
-Send a message to [this](yanmagale@gmail.com) e-mail
+Fell free to send a message to [this](yanmagale@gmail.com) e-mail
