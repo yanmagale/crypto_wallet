@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { setTransactions } from 'redux-folder/actions';
 
 import BankStatementTransactions from 'components/bank-statement/transactions';
-import BankStatementService from 'services/bankStatement/';
+import BankStatementService from 'services/bank-statement/';
 import { Title, NavigationContainer, TransactionsContainer } from './style';
 
 class BankStatementPage extends Component {

@@ -6,7 +6,7 @@ import { setCurrencies } from 'redux-folder/actions';
 import UsersService from 'services/users/';
 import CurrencyBuilder from 'services/wallet/currencyHelper';
 
-import Wallet from 'components/wallet';
+import Wallet from 'components/wallet/';
 import { Wrapper, Title, WalletInformation, BankStatement } from './style';
 
 class WalletPage extends Component {
