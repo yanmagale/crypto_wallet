@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import WalletPage from 'pages/wallet/';
+// import WalletPage from 'pages/wallet/';
 import SignUpPage from 'pages/sign-up/';
-import BankStatementPage from 'pages/bank-statement/';
-import BuyCurrencyPage from 'pages/buy-currency/';
+// import BankStatementPage from 'pages/bank-statement/';
+// import BuyCurrencyPage from 'pages/buy-currency/';
 import { Store } from 'redux-folder/store';
 
 import './styles/index.css';
@@ -18,9 +18,9 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={SignUpPage} />
-          <Route path="/wallet" component={WalletPage} />
+          {/* <Route path="/wallet" component={WalletPage} />
           <Route path="/buy/" component={BuyCurrencyPage} />
-          <Route path="/bank-statement/" component={BankStatementPage} />
+          <Route path="/bank-statement/" component={BankStatementPage} /> */}
         </Switch>
       </BrowserRouter>
     </Provider>
