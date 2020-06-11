@@ -1,4 +1,4 @@
-import { SET_BALANCES, SET_RATES } from 'reduxFolder/actions/actionTypes';
+import { SET_BALANCES, SET_RATES } from 'redux-folder/actions/actionTypes';
 
 const initialState = {
   balances: [],

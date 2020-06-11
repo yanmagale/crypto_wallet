@@ -26,7 +26,7 @@
           "database": "./src/database",
           "pages": "./src/pages",
           "services": "./src/services",
-          "reduxFolder": "./src/redux"
+          "redux-folder": "./src/redux"
         }
       }
     ]

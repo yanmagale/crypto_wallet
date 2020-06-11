@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setTransactions } from 'reduxFolder/actions';
+import { setTransactions } from 'redux-folder/actions';
 
-import BankStatementTransactions from 'components/bankStatement/transactions';
+import BankStatementTransactions from 'components/bank-statement/transactions';
 import BankStatementService from 'services/bankStatement/';
 import { Title, NavigationContainer, TransactionsContainer } from './style';
 

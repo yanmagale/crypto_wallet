@@ -1,4 +1,4 @@
-import { SET_CURRENCIES } from 'reduxFolder/actions/actionTypes';
+import { SET_CURRENCIES } from 'redux-folder/actions/actionTypes';
 
 const initialState = {
   currencies: [],

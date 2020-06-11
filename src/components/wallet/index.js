@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setBalances, setRates } from 'reduxFolder/actions';
+import { setBalances, setRates } from 'redux-folder/actions';
 
 import Currency from 'components/currency/';
 

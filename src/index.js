@@ -4,10 +4,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import WalletPage from 'pages/wallet/';
-import SignUpPage from 'pages/signUp/';
-import BankStatementPage from 'pages/bankStatement/';
-import BuyCurrencyPage from 'pages/buyCurrency/';
-import { Store } from 'reduxFolder/store';
+import SignUpPage from 'pages/sign-up/';
+import BankStatementPage from 'pages/bank-statement/';
+import BuyCurrencyPage from 'pages/buy-currency/';
+import { Store } from 'redux-folder/store';
 
 import * as serviceWorker from './serviceWorker';
 

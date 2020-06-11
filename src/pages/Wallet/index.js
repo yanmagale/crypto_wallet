@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setCurrencies } from 'reduxFolder/actions';
+import { setCurrencies } from 'redux-folder/actions';
 
 import UsersService from 'services/users/';
-import CurrencyBuilder from 'services/wallet/currencyHelper/';
+import CurrencyBuilder from 'services/wallet/currencyHelper';
 
 import Wallet from 'components/wallet';
 import { Wrapper, Title, WalletInformation, BankStatement } from './style';

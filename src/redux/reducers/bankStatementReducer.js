@@ -1,4 +1,4 @@
-import { SET_TRANSACTIONS } from 'reduxFolder/actions/actionTypes';
+import { SET_TRANSACTIONS } from 'redux-folder/actions/actionTypes';
 
 const initialState = {
   transactions: [],
