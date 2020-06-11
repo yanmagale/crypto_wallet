@@ -23,6 +23,7 @@ Crypto Wallet
 - Jest and Enzyme
 - Eslint/Prettier/Stylelint
 - Styled Components
+- Webpack
 - For commits - we are using commitlint pattern. [Check it out](https://commitlint.js.org/#/)
 - For CI - Netlify
 
