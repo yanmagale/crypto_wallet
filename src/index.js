@@ -9,6 +9,7 @@ import BankStatementPage from 'pages/bank-statement/';
 import BuyCurrencyPage from 'pages/buy-currency/';
 import { Store } from 'redux-folder/store';
 
+import './styles/index.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

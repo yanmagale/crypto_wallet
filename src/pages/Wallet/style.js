@@ -8,6 +8,8 @@ export const Title = styled.h1`
 `;
 
 export const Wrapper = styled.section`
+  margin-top: 10px;
+  padding: 5px 10px;
   header {
     border-bottom: 1px solid #14aa4b;
     margin-bottom: 10px;
