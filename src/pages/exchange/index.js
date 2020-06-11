@@ -42,7 +42,7 @@ class ExchangePage extends Component {
           <div>Seu Saldo em Conta: R$ 100.000,00</div>
           <div>
             Para acessar o seu extrato,{' '}
-            <Link to={`/bank-statement`}>clique aqui</Link>
+            <Link to={`/account-statement`}>clique aqui</Link>
           </div>
         </BankStatement>
       </Wrapper>
