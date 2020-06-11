@@ -2,6 +2,8 @@ Crypto Wallet
 
 > A small application to give a access for a user in order to control your cripto currencies.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e9f9ae04-ff13-4032-af47-5aff9774e311/deploy-status)](https://app.netlify.com/sites/crypto-wallet-app/deploys)
+
 # Setup
 
 - After clone this repo, run `nvm install 10`
