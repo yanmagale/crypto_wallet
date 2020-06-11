@@ -6,7 +6,7 @@ import { setCurrencies } from 'redux-folder/actions';
 import UsersService from 'services/users/';
 import CurrencyBuilder from 'services/wallet/currencyHelper';
 
-import Wallet from 'components/wallet/';
+import WalletComponent from 'components/wallet/';
 import { Wrapper, Title, WalletInformation, BankStatement } from './style';
 
 class WalletPage extends Component {
@@ -37,7 +37,7 @@ class WalletPage extends Component {
         <WalletInformation>
           Veja abaixo informações sobre as moedas da sua carteira!
         </WalletInformation>
-        <Wallet currencies={currencies} />
+        <WalletComponent currencies={currencies} />
         <BankStatement>
           <div>Seu Saldo em Conta: R$ 100.000,00</div>
           <div>
