@@ -14,7 +14,7 @@ class SignUpPage extends Component {
   componentDidMount() {
     UsersService.hasCreatedUsers()
       .then((hasUsers) => {
-        return hasUsers ? this.props.history.push('/wallet') : '';
+        return hasUsers ? this.props.history.push('/exchange') : '';
       })
       .catch((err) => console.log(err));
   }
@@ -22,7 +22,7 @@ class SignUpPage extends Component {
   createUser(user) {
     UsersService.create(user)
       .then(() => {
-        this.props.history.push('/wallet');
+        this.props.history.push('/exchange');
       })
       .catch((err) => console.log(err));
   }

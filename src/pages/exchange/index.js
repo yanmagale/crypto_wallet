@@ -9,7 +9,7 @@ import CurrencyBuilder from 'services/wallet/currencyHelper';
 import WalletComponent from 'components/wallet/';
 import { Wrapper, Title, WalletInformation, BankStatement } from './style';
 
-class WalletPage extends Component {
+class ExchangePage extends Component {
   constructor(props) {
     super(props);
   }
@@ -62,9 +62,9 @@ const mapStateToProps = (state) => ({
   currencies: state.currenciesReducer.currencies,
 });
 
-const WalletPageComponent = connect(
+const ExchangePageComponent = connect(
   mapStateToProps,
   mapDispatchToProps
-)(WalletPage);
+)(ExchangePage);
 
-export default withRouter(WalletPageComponent);
+export default withRouter(ExchangePageComponent);

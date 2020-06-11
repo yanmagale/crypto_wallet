@@ -32,7 +32,7 @@ class BankStatementPage extends Component {
         )}
         <NavigationContainer>
           Para acessar sua carteira,
-          <Link to={`/wallet`}>clique aqui</Link>
+          <Link to={`/exchange`}>clique aqui</Link>
         </NavigationContainer>
       </div>
     );
