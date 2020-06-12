@@ -43,7 +43,7 @@ class ExchangePage extends Component {
         <BankStatement>
           <NationalExchangeComponent />
           <div>
-            Para acessar o seu extrato,{' '}
+            Para acessar o seu extrato,
             <Link to={`/account-statement`}>clique aqui</Link>
           </div>
         </BankStatement>
