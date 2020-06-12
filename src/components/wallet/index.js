@@ -22,10 +22,10 @@ class Wallet extends Component {
       !this.state.updatedBalances &&
       !this.state.updatedRate
     ) {
-      const promises = currencies.map((currency) => currency.balance);
+      const balancesPromises = currencies.map((currency) => currency.balance);
       const ratesPromises = currencies.map((currency) => currency.exhangeRate);
 
-      Promise.all(promises).then((results) => {
+      Promise.all(balancesPromises).then((results) => {
         setBalances(results);
         this.setState({
           updatedBalances: true,
