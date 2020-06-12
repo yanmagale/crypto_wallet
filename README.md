@@ -41,6 +41,8 @@ Access [this](https://crypto-wallet-app.netlify.app/) link to use the applicatio
 - Create a better UI screens
 - Create Change Currencies feature
 - Limit buy and sell actions based at max amount, calculated by exchange curency rate and national exchange amount
+- Multi user access
+- Add to transactions structure an user relation
 - Create more tests
 
 # Questions

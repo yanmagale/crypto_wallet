@@ -1,11 +1,14 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import PurchaseForm from 'components/purchase/form/';
 import CurrencyInformation from 'components/currency-information/';
 import CurrencyBuilder from 'services/wallet/currencyHelper';
 import TransactionService from 'services/transaction/';
 import BalancesService from 'services/balances/';
+
+import { Wrapper, Title, Container, NavigationContainer } from './style';
 
 const PurchaseCurrencyPage = () => {
   let history = useHistory();
@@ -35,14 +38,20 @@ const PurchaseCurrencyPage = () => {
   }
 
   return (
-    <div>
-      <h3>ID: {query.get('currency')}</h3>
-      <CurrencyInformation currency={currency} />
-      <PurchaseForm
-        currency={currency}
-        handleCreateTransaction={createTransaction}
-      />
-    </div>
+    <Container>
+      <Title>Comprar Moeda</Title>
+      <Wrapper>
+        <CurrencyInformation currency={currency} />
+        <PurchaseForm
+          currency={currency}
+          handleCreateTransaction={createTransaction}
+        />
+      </Wrapper>
+      <NavigationContainer>
+        Para acessar sua carteira,
+        <Link to={`/exchange`}>clique aqui</Link>
+      </NavigationContainer>
+    </Container>
   );
 };
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
+import { FormElement, Button } from './style';
+
 class PurchaseForm extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +48,7 @@ class PurchaseForm extends Component {
     return (
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <FormElement>
             <label htmlFor="amountImput">Quantidade</label>
             <input
               type="text"
@@ -55,9 +57,10 @@ class PurchaseForm extends Component {
               onChange={this.handleChange}
               id="amountImput"
               placeholder="Quantidade a Comprar"
+              required
             />
-          </div>
-          <button>Comprar</button>
+          </FormElement>
+          <Button>Comprar</Button>
         </form>
       </React.Fragment>
     );
