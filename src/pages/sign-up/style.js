@@ -31,4 +31,5 @@ export const ApplicationContent = styled.p`
   margin: 0;
   padding: 15px 10px;
   font-size: 18px;
+  text-align: center;
 `;

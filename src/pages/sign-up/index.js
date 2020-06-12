@@ -36,12 +36,12 @@ class SignUpPage extends Component {
     return (
       <Container>
         <Title>Crypto Wallet</Title>
-        <div>
-          <ApplicationContent>
-            Bem-vindo ao seu controle de crypto moedas. Crie sua conta e depois
-            gerencia as suas moedas virtuais.
-          </ApplicationContent>
-        </div>
+
+        <ApplicationContent>
+          Bem-vindo ao seu controle de crypto moedas. Crie sua conta e depois
+          gerencia as suas moedas virtuais.
+        </ApplicationContent>
+
         <Wrapper>
           <h2 className="form__title">Preencha os campos abaixo</h2>
           <SignUpForm handleCreateUser={this.createUser} />
