@@ -10,6 +10,8 @@ export const Wrapper = styled.section`
   font-size: 15px;
   p {
     margin: 0;
+    width: 25%;
+    padding-left: 5px;
   }
 
   :nth-child(2n) {
