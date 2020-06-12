@@ -4,6 +4,10 @@ Crypto Wallet
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e9f9ae04-ff13-4032-af47-5aff9774e311/deploy-status)](https://app.netlify.com/sites/crypto-wallet-app/deploys)
 
+# Live Application
+
+Access [this](https://crypto-wallet-app.netlify.app/) link to use the application
+
 # Setup
 
 - After clone this repo, run `nvm install 10`

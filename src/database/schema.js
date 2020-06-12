@@ -4,6 +4,7 @@ const database = new Dexie('CryptoWallet');
 database.version(1).stores({
   users: '++id, name, email',
   transactions: '++id, type, amount, currency',
+  balances: '++id, type, amount',
 });
 
 database.open().catch(function (e) {
