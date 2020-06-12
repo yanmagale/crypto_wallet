@@ -11,4 +11,8 @@ export const Wrapper = styled.section`
   p {
     margin: 0;
   }
+
+  :nth-child(2n) {
+    background: #d9d9d9;
+  }
 `;

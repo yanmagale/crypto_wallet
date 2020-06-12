@@ -21,4 +21,5 @@ export const NavigationContainer = styled.div`
 
 export const TransactionsContainer = styled.div`
   min-height: 200px;
+  overflow-y: scroll;
 `;
