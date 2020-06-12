@@ -29,7 +29,7 @@ const Currency = ({
           <Link to={`/purchase?currency=${name}`}>
             <Button>Comprar {initials}</Button>
           </Link>
-          <Link to="/sell">
+          <Link to={`/negociate?currency=${name}`}>
             <Button>Vender {initials}</Button>
           </Link>
         </div>
