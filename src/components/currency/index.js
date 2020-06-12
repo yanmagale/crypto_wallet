@@ -23,7 +23,7 @@ const Currency = ({
           </Price>
         </p>
         <p>
-          Valor de compra: <Price> R$ {exchangeRate}</Price>
+          Valor de compra: <Price> R$ {exchangeRate.buy}</Price>
         </p>
         <div className="currency__actions">
           <Link to={`/purchase?currency=${name}`}>

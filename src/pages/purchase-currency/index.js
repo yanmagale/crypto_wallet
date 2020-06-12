@@ -13,11 +13,13 @@ const PurchaseCurrencyPage = () => {
 
   const currency = CurrencyBuilder.getCurrency(query.get('currency'));
 
-  function createTransaction(transaction) {
+  async function createTransaction(transaction) {
+    const exchangeRate = await currency.getExchangeRate();
     const balance = {
       type: 'sub',
-      amount: transaction.amount, //qtd * valor de compra da moeda
+      amount: parseInt(transaction.amount) * parseFloat(exchangeRate.buy),
     };
+
     Promise.all([
       TransactionService.create(transaction),
       BalancesService.add(balance),

@@ -53,7 +53,7 @@ class Wallet extends Component {
                 balance={balances[index]}
                 initials={currency.initials}
                 currencySymbol={currency.currencySymbol}
-                exchangeRate={rates[index] ? rates[index].buy : ''}
+                exchangeRate={rates[index] ? rates[index] : ''}
               />
             </CurrencyContainer>
           ))}

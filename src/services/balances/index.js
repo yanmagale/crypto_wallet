@@ -9,11 +9,12 @@ const BalancesService = {
     const balancesOperations = await database.balances.toArray();
 
     return balancesOperations.reduce((totalAmount, balance) => {
-      if (balance.type === 'add') {
-        return (totalAmount += parseInt(balance.amount));
-      }
+      const newAmount =
+        balance.type === 'add'
+          ? (totalAmount += balance.amount)
+          : (totalAmount -= balance.amount);
 
-      return (totalAmount -= parseInt(balance.amount));
+      return parseFloat(newAmount.toFixed(2));
     }, 0);
   },
 };
