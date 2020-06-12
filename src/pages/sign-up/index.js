@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import UsersService from 'services/users/';
+import BalancesService from 'services/balances/';
 import SignUpForm from 'components/sign-up/form';
 
 import { Wrapper, Title, Container, ApplicationContent } from './style';
@@ -20,7 +21,11 @@ class SignUpPage extends Component {
   }
 
   createUser(user) {
-    UsersService.create(user)
+    const balance = {
+      type: 'add',
+      amount: 100000,
+    };
+    Promise.all([UsersService.create(user), BalancesService.add(balance)])
       .then(() => {
         this.props.history.push('/exchange');
       })

@@ -7,6 +7,8 @@ import UsersService from 'services/users/';
 import CurrencyBuilder from 'services/wallet/currencyHelper';
 
 import WalletComponent from 'components/wallet/';
+import NationalExchange from 'components/national-exchange';
+
 import { Wrapper, Title, WalletInformation, BankStatement } from './style';
 
 class ExchangePage extends Component {
@@ -39,7 +41,7 @@ class ExchangePage extends Component {
         </WalletInformation>
         <WalletComponent currencies={currencies} />
         <BankStatement>
-          <div>Seu Saldo em Conta: R$ 100.000,00</div>
+          <NationalExchange />
           <div>
             Para acessar o seu extrato,{' '}
             <Link to={`/account-statement`}>clique aqui</Link>
