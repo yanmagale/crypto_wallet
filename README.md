@@ -26,6 +26,7 @@ Access [this](https://crypto-wallet-app.netlify.app/) link to use the applicatio
 
 - React
 - Redux
+- For store data at Indexed DB - Dexie
 - Jest and Enzyme
 - Eslint/Prettier/Stylelint
 - Styled Components
