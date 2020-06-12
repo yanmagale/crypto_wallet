@@ -10,7 +10,7 @@ Access [this](https://crypto-wallet-app.netlify.app/) link to use the applicatio
 
 # Setup
 
-- After clone this repo, run `nvm install 10`
+- After clone this repo, check your node version with `node -v`. Case this version was lower than 11 , run `nvm install 10` or use you system node manager appication to install the version 10
 - After that, run `npm install` to install dependencies
 - Finnaly run `npm start` and the application will open at the your browser
 
@@ -40,6 +40,7 @@ Access [this](https://crypto-wallet-app.netlify.app/) link to use the applicatio
 - Improve UI actions at form components
 - Create a better UI screens
 - Create Change Currencies feature
+- Limit buy and sell actions based at max amount, calculated by exchange curency rate and national exchange amount
 - Create more tests
 
 # Questions

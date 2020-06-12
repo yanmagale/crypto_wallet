@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { setNationalAmount } from 'redux-folder/actions';
 import BalancesService from 'services/balances/';
 
 import { Price } from './style';
 
 class NationalExchange extends Component {
-  constructor() {
-    super();
-    this.state = {
-      amount: 0,
-    };
-  }
-
   componentDidMount() {
     BalancesService.getAmount()
-      .then((response) => {
-        this.setState({ amount: response });
-      })
+      .then((response) => this.setNationalExchangeAmount(response))
       .catch((error) => console.error(error));
   }
 
+  setNationalExchangeAmount(amount) {
+    const { setNationalAmount } = this.props;
+    setNationalAmount(amount);
+  }
+
   render() {
-    const { amount } = this.state;
+    const { amount } = this.props;
     return (
       <React.Fragment>
         <div>
@@ -31,4 +30,21 @@ class NationalExchange extends Component {
   }
 }
 
-export default NationalExchange;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setNationalAmount: (amount) => {
+      dispatch(setNationalAmount(amount));
+    },
+  };
+};
+
+const mapStateToProps = (state) => ({
+  amount: state.nationalExchangeReducer.amount,
+});
+
+const NationalExchangeComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NationalExchange);
+
+export default NationalExchangeComponent;
