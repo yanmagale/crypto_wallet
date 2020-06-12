@@ -18,8 +18,15 @@ class BitcoinCurrency {
       'https://www.mercadobitcoin.net/api/BTC/ticker/',
       { mode: 'cors' }
     );
-    const rate = await response.json();
-    const { buy = null, sell = null } = rate.ticker;
+    const responseContent = await response.text();
+    const rate = responseContent ? JSON.parse(responseContent) : {};
+    let buy = null;
+    let sell = null;
+
+    if (rate.ticker) {
+      buy = rate.ticker.buy;
+      sell = rate.ticker.sell;
+    }
     return {
       buy,
       sell,
