@@ -2,15 +2,14 @@ import database from 'database/schema.js';
 
 class BritaCurrency {
   async getBalance() {
-    const bitcoinsPurchased = await database.transactions
-      .filter(
-        (transaction) =>
-          transaction.type == 'purchase' && transaction.currency == 'brita'
-      )
+    const britasPurchased = await database.transactions
+      .filter((transaction) => transaction.currency == 'brita')
       .toArray();
 
-    return bitcoinsPurchased.reduce((totalAmount, transaction) => {
-      return totalAmount + parseInt(transaction.amount);
+    return britasPurchased.reduce((totalAmount, transaction) => {
+      return transaction.type === 'purchase'
+        ? (totalAmount += parseInt(transaction.amount))
+        : (totalAmount -= parseInt(transaction.amount));
     }, 0);
   }
 
