@@ -60,7 +60,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "dexie": "^3.0.1",
+    "dexie": "^3.2.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-redux": "^7.2.0",
